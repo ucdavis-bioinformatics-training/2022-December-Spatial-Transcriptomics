@@ -1,8 +1,11 @@
 ## Links to Scripts
 
 
-#### Slurm script for cellranger counts
-[Cellranger counts](scripts/cellranger-counts.sh)
+#### SLURM script for Space Ranger
+[01-spaceranger.slurm](scripts/01-spaceranger.slurm)
 
-#### Bash script (loop) for cellranger counts
-[Cellranger counts](scripts/cellranger-counts.bash)
+#### SLURM script for Seurat's FindSpatiallyVariableFeatures function
+[02-Seurat.slurm](scripts/02-Seurat.slurm)
+
+#### R script for Seurat's FindSpatiallyVariableFeatures function
+[FindSpatiallyVariable.R](scripts/FindSpatiallyVariable.R)
