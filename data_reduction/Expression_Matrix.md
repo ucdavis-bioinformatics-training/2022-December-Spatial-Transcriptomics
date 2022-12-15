@@ -4,7 +4,19 @@ Most analyses have two stages: data reduction and data analysis.
 
 Analyses of spatial transcriptomics data take as their starting point an __expression matrix__, where each row represents a gene and each column represents a cell or spot. Each entry in the matrix represents the number of reads (proxy for expression level) of a particular gene in a given sample (spot). Because we are working with 10x Genomics data, we will be using the 10x Cell Ranger pipeline to handle the data reduction tasks.
 
-## Visium libraries
+## Visium
+
+<img src="figures/visium1.png" alt="structure of a Visium gene expression slide"	width="80%">
+
+The Visium slide captures RNA from tissue slices placed over specialized regions of oligo spots called the capture area. Each of these spots is identified by both a coordinate system describing its location within the capture area, and a unique spatial barcode sequence, analogous to the cell barcode from a single cell or single nuclei experiment.
+
+<img src="figures/visium2.png" alt="reactions taking place on Visium slide"	width="30%">
+
+Each spot is comprised of a group of oligos, each of which includes the spatial barccode, which is the same for every oligo in the spot, and the unique molecular identifier (UMI), which is random, and different for each oligo. Through a series of interactions that take place on the slide, RNA released by tissue permeabilization is therefore barcoded with an identifier corresponding to both the spatial location on the slide, and the identity of the RNA fragment.
+
+After cDNA amplification and processing, the final library has the following structure:
+
+<img src="figures/visium4.png" alt="final library structure"	width="80%">
 
 All images in this section come from the 10x Visium spatial gene expression reagent kit [user guide](https://cdn.10xgenomics.com/image/upload/v1660261286/support-documents/CG000239_Visium_Spatial_Gene_Expression_User_Guide_Rev_F.pdf).
 
@@ -88,15 +100,18 @@ HDF5 is a file format designed to preserve a hierarchical, filesystem-like organ
 
 #### tissue_highres_image.png and tissue_lowres_image.png
 These images are reduced-resolution copies of the original slide image provided to Space Ranger, downsampled 2,000 (6.5mm capture area) or 4,000 (11mm capture area) pixels for the "hires" image, and 600 pixels for the "lowres" image.
-![](figures/tissue_lowres_image.png)
+
+<img src="figures/tissue_lowres_image.png" alt="low resolution tissue image"	width="50%">
 
 #### aligned_fiducials.jpg
 Useful for assessing the accuracy of the slide alignment, aligned_fiducials.jpg highlights the fiducial spots in red.
-![](figures/aligned_fiducials.jpg)
+
+<img src="figures/aligned_fiducials.jpg" alt="highlighted fiducial alignment"	width="50%">
 
 #### detected_tissue_image.jpg
 The area of the slide determined to be covered by the tissue slice is highlighted in red, while the fiducial spots are circled in blue.
-![](figures/detected_tissue_image.jpg)
+
+<img src="figures/detected_tissue_image.jpg" alt="highlighted tissue-associated spots"	width="50%">
 
 #### scalefactors_json.json
 A file containing scaling factors to convert between resolutions, and diameters of spots in both the fiducial border and the central capture area.
