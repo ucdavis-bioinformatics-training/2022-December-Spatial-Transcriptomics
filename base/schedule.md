@@ -7,9 +7,9 @@ All posted times are **Pacific** time zone. At least one break will be provided 
 |:----------- |:------------------- |
 |**8:50 am**  | Zoom session starts |
 |**9:00 am**  | Introductions |
-|**9:10 am**  | What is spatial transcriptomics? |
-|**9:30 am**  | Generating an expression matrix |
-|**11:30 am**  | Project setup |
+|**9:30 am**  | What is spatial transcriptomics? |
+|**10:00 am**  | Generating an expression matrix |
+|**11:30 am**  | Guest speaker- 10x Genomics |
 |**12:00 am**  | Lunch |
 |**1:00 pm**  | QA / QC |
 |**2:00 pm**  | Preliminary analysis |
