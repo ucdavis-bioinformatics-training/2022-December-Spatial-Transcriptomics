@@ -16,11 +16,8 @@ navigation:
   - title: Scripts
     url: software_scripts/scripts_links
 
-  - heading: Spatial Transcriptomics 
-  - title: Project setup
-    url: data_reduction/project_setup
+  - heading: Spatial Transcriptomics
   - title: Generating Expression Matrix
     url: data_reduction/Expression_Matrix
   - title: Analysis in R
     url: data_analysis/visium_analysis_fixed
-
