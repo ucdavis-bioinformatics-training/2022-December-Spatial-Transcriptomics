@@ -51,7 +51,7 @@ cp ../scripts/* scripts/
 ```
 
 ## Input
-Space Ranger requires sample IDs, the path to fastq files, a brightfield images, the slide serial number, and the capture area. We'll be using a tab delimited file to this information, which would be recorded before sequencing. Create a file called design.tsv with the following contents:
+Space Ranger requires sample IDs, the path to fastq files, a brightfield images, the slide serial number, and the capture area. We'll be using a tab delimited file to this information, which would be recorded before sequencing. Create a file called design.tsv in your project directory with the following contents:
 
 ```bash
 V1_Mouse_Brain_Sagittal_Anterior_Section_1	V1_Mouse_Brain_Sagittal_Anterior_image.tif	V19L29-035	B1
@@ -68,8 +68,7 @@ less scripts/01-spaceranger.slurm
 Launch the Space Ranger job.
 
 ```bash
-cd scripts
-sbatch 01-spaceranger.slurm
+sbatch scripts/01-spaceranger.slurm
 ```
 
 ## Output
@@ -131,3 +130,12 @@ This file contains the information required to map each spot barcode sequence to
 
 #### barcode_fluorescence_intensity.csv
 If a fluorescent image is provided with the --darkimage argument, a barcode_fluorescence_intensity.csv will be created to contain mean fluorescence per spot in each channel.
+
+## Prepare for R analysis
+
+Before logging out of tadpole, create a directory for the more computationally intensive portions of the R analysis.
+
+```bash
+mkdir -p /share/workshop/spatial_workshop/$USER/02-Seurat
+```
+Download the R markdown document for the analysis portion of the course.
