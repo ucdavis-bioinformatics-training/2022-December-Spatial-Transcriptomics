@@ -46,7 +46,7 @@ Set up your directory:
 mkdir -p /share/workshop/spatial_workshop/$USER/scripts/slurmout
 cd /share/workshop/spatial_workshop/$USER/
 ln -s ../data 00-RawData
-ln -s ../refdata-gex-mm10-2020-A reference
+ln -s ../refdata-gex-mm10-2020-A .
 cp ../scripts/* scripts/
 ```
 
