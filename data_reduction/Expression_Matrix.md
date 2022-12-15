@@ -38,12 +38,12 @@ cp ../scripts/* scripts/
 ## Input
 Space Ranger requires sample IDs, the path to fastq files, a brightfield images, the slide serial number, and the capture area. We'll be using a tab delimited file to this information, which would be recorded before sequencing. Create a file called design.tsv with the following contents:
 
-<div class='output'>
+```bash
 V1_Mouse_Brain_Sagittal_Anterior_Section_1	V1_Mouse_Brain_Sagittal_Anterior_image.tif	V19L29-035	B1
 V1_Mouse_Brain_Sagittal_Posterior_Section_1	V1_Mouse_Brain_Sagittal_Posterior_image.tif	V19L29-035	A1
 V1_Mouse_Brain_Sagittal_Anterior_Section_2	V1_Mouse_Brain_Sagittal_Anterior_Section_2_image.tif	V19L29-035	D1
 V1_Mouse_Brain_Sagittal_Posterior_Section_2	V1_Mouse_Brain_Sagittal_Posterior_Section_2_image.tif	V19L29-035	C1
-<\div>
+```
 
 This file will be parsed by the 01-spaceranger.slurm script, and the fields provided as arguments to spaceranger count. Take a few minutes to examine the arguments to Space Ranger.
 
