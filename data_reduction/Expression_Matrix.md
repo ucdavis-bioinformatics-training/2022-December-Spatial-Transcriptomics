@@ -10,13 +10,13 @@ Analyses of spatial transcriptomics data take as their starting point an __expre
 
 The Visium slide captures RNA from tissue slices placed over specialized regions of oligo spots called the capture area. Each of these spots is identified by both a coordinate system describing its location within the capture area, and a unique spatial barcode sequence, analogous to the cell barcode from a single cell or single nuclei experiment.
 
-<img src="figures/visium2.png" alt="reactions taking place on Visium slide"	width="30%">
+<img src="figures/visium2.png" alt="reactions taking place on Visium slide"	width="50%">
 
 Each spot is comprised of a group of oligos, each of which includes the spatial barccode, which is the same for every oligo in the spot, and the unique molecular identifier (UMI), which is random, and different for each oligo. Through a series of interactions that take place on the slide, RNA released by tissue permeabilization is therefore barcoded with an identifier corresponding to both the spatial location on the slide, and the identity of the RNA fragment.
 
 After cDNA amplification and processing, the final library has the following structure:
 
-<img src="figures/visium4.png" alt="final library structure"	width="80%">
+<img src="figures/visium5.png" alt="final library structure"	width="80%">
 
 All images in this section come from the 10x Visium spatial gene expression reagent kit [user guide](https://cdn.10xgenomics.com/image/upload/v1660261286/support-documents/CG000239_Visium_Spatial_Gene_Expression_User_Guide_Rev_F.pdf).
 
@@ -32,7 +32,7 @@ Space Ranger is a suite of tools for processing Visium data, including:
 
 ## Image processing in Space Ranger
 
-<img src="figures/tissue_hires_image.jpg" alt="high resolution tissue image"	width="50%">
+<img src="figures/tissue_hires_image.png" alt="high resolution tissue image"	width="50%">
 
 Space Ranger automatically aligns the slide image using special fiducial spots located in the corners of the capture area, and determines which spots are located under the tissue. If automatic alignment fails, or image quality is poor, the Loupe browser can be used for manual image alignment, which produces a json file containing positional information that allows Space Ranger to determine which spots are under tissue.
 
