@@ -31,6 +31,9 @@ Space Ranger is a suite of tools for processing Visium data, including:
 - __spaceranger targeted-depth__ simulates a targeted gene expression experiment by computing the fraction of reads from a fresh-frozen experiment that map to targeted genes.
 
 ## Image processing in Space Ranger
+
+<img src="figures/tissue_hires_image.jpg" alt="high resolution tissue image"	width="50%">
+
 Space Ranger automatically aligns the slide image using special fiducial spots located in the corners of the capture area, and determines which spots are located under the tissue. If automatic alignment fails, or image quality is poor, the Loupe browser can be used for manual image alignment, which produces a json file containing positional information that allows Space Ranger to determine which spots are under tissue.
 
 For an in-depth explanation of Space Ranger methods, visit the [10x Genomics documentation site](https://support.10xgenomics.com/spatial-gene-expression/software/pipelines/latest/what-is-space-ranger).
@@ -57,7 +60,7 @@ V1_Mouse_Brain_Sagittal_Anterior_Section_2	V1_Mouse_Brain_Sagittal_Anterior_Sect
 V1_Mouse_Brain_Sagittal_Posterior_Section_2	V1_Mouse_Brain_Sagittal_Posterior_Section_2_image.tif	V19L29-035	C1
 ```
 
-This file will be parsed by the 01-spaceranger.slurm script, and the fields provided as arguments to spaceranger count. Take a few minutes to examine the arguments to Space Ranger.
+This file will be parsed by the 01-spaceranger.slurm script, and the fields provided as arguments to spaceranger count. Take a few minutes to examine the arguments to Space Ranger, the content of the input files (both fastq and image).
 
 ```bash
 less scripts/01-spaceranger.slurm
