@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=8 # Number of cores
 #SBATCH --mem=64000 # Memory pool for all cores (see also --mem-per-cpu)
-#SBATCH --account=scworkshop
+#SBATCH --account=workshop
 #SBATCH --reservation=scworkshop
 #SBATCH --output=slurmout/spaceranger-count-%A_%a.out # File to which STDOUT will be written
 #SBATCH --error=slurmout/spaceranger-count-%A_%a.err # File to which STDERR will be written
@@ -17,7 +17,7 @@
 project=/share/workshop/spatial_workshop/$USER
 fastqs=${project}/00-RawData
 outdir=${project}/01-Spaceranger
-transcriptome=${project}/references/refdata-gex-mm10-2020-A
+transcriptome=${project}/refdata-gex-mm10-2020-A
 sample=`sed "${SLURM_ARRAY_TASK_ID}q;d" ${project}/design.tsv | cut -f1`
 image=`sed "${SLURM_ARRAY_TASK_ID}q;d" ${project}/design.tsv | cut -f2`
 serial=`sed "${SLURM_ARRAY_TASK_ID}q;d" ${project}/design.tsv | cut -f3`
@@ -43,7 +43,7 @@ call="spaceranger count \
   --image=${fastqs}/images/${image} \
   --slide=$serial \
   --area=$area \
-  --reorient-images \
+  --reorient-images=true \
   --nosecondary \
   --localcores=${SLURM_NTASKS} \
   --localmem=${SLURM_MEM_PER_NODE} \

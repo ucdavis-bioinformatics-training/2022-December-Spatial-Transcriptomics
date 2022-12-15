@@ -68,7 +68,8 @@ less scripts/01-spaceranger.slurm
 Launch the Space Ranger job.
 
 ```bash
-sbatch scripts/01-spaceranger.slurm
+cd scripts
+sbatch 01-spaceranger.slurm
 ```
 
 ## Output
