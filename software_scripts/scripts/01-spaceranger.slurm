@@ -50,7 +50,7 @@ call="spaceranger count \
 >> ${outdir}/${sample}.log.out \
 2> ${outdir}/${sample}.log.err"
 
-export PATH=/share/biocore/hslyman/spaceranger-1.3.1:$PATH
+export PATH=/share/workshop/spatial_workshop/software/spaceranger-2.0.0:$PATH
 echo $call >> ${outdir}/${sample}.log.out
 
 cd $outdir
