@@ -19,6 +19,15 @@ if (!any(rownames(installed.packages()) == "knitr")){
 if (!any(rownames(installed.packages()) == "Seurat")){
   BiocManager::install("Seurat")
 }
+if (!any(rownames(installed.packages()) == "hdf5r")){
+  BiocManager::install("hdf5r")
+}
+if (!any(rownames(installed.packages()) == "harmony")){
+  BiocManager::install("harmony")
+}
+if (!any(rownames(installed.packages()) == "Matrix")){
+  BiocManager::install("Matrix")
+}
 if (!any(rownames(installed.packages()) == "ggplot2")){
   BiocManager::install("ggplot2")
 }
@@ -30,6 +39,7 @@ if (!any(rownames(installed.packages()) == "patchwork")){
 }
 library(knitr)
 library(Seurat)
+library(harmony)
 library(ggplot2)
 library(viridis)
 library(patchwork)
@@ -388,7 +398,7 @@ If your slurm array is not yet complete, you can download the finished objects f
 scp username@tadpole.genomecenter.ucdavis.edu:/share/workshop/spatial_workshop/data_analysis/R/*_spatiallyVariableFeatures.rds .
 ```
 
-FindSpatiallyVariableFeatures adds.
+The results of FindSpatiallyVariableFeatures can be accessed with the SVFInfo (produces a table of scores) or SpatiallyVariableFeatures (produces a list of genes, in order of decreasing spatial variability).
 
 ```{r, vis_top_spatial}
 experiment.slices <- lapply(unique(experiment.merged$orig.ident), function(sample){
